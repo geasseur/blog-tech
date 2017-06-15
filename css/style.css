@@ -1,0 +1,21 @@
+/*header*/
+
+header>img, header>h1{
+  display: inline-block;
+}
+
+/*Main*/
+
+#tableauProduit, #article, #article>article{
+  border: 1px solid #000;
+}
+
+
+@media (min-width: 900px) {
+  #tableauProduit, #article{
+    vertical-align: top;
+    width: 45%;
+    display: inline-block;
+    border: 1px solid #000;
+  }
+}
