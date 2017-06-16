@@ -1,11 +1,21 @@
+#page{
+  background-color: rgba(67, 149, 235, 0.5);
+}
 /*header*/
 
 header{
-  background-color: rgba(134, 134, 134, 0.5);
+  background-color: rgba(245, 105, 105, 0.5);
 }
 
 header>img, header>h1{
   display: inline-block;
+}
+header>h1{
+  width: 30%;
+  margin: auto;
+}
+header>img{
+  width: 40%;
 }
 #barreNavigation>button{
   bottom : 30px;
@@ -14,23 +24,31 @@ header>img, header>h1{
 /*Main*/
 
 main,footer{
-  position: relative;
-  top: 150px;
+  position: relative !important;
+  top: 275px;
+}
+
+.temps{
+ width: 35%;
+ margin: auto;
 }
 
 #tableauProduit, #article, #article>article{
   border: 1px solid #000;
 }
 
-@media (min-width: 850px){
-}
-
-
 @media (min-width: 1000px) {
   #tableauProduit, #article{
     vertical-align: top;
     width: 45%;
+    margin: auto;
     display: inline-block;
     border: 1px solid #000;
+  }
+  header>img{
+    width: 15%;
+  }
+  main, footer{
+    top : 350px;
   }
 }

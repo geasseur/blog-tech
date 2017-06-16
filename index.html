@@ -12,33 +12,39 @@
       <link rel="icon" type="image/png" href=".png" />
       <title>Blog de la tech tonique</title>
     </head>
-    <body onload = "interval()" >
+    <body onload = "interval()" id= "page" >
         <header class="fixed-top">
-          <img src="" alt="logo du blog">
+          <img src="img/mobile/logo.png" alt="logo du blog">
           <h1>Blog de la tech tonique</h1>
-          <p id="horaire"></p>
-          <p id="tmpReste"></p>
           <nav class="navbar navbar-toggleable-md navbar-light" id="barreNavigation">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="col-12 navbar-nav mr-auto row d-flex flex-nowrap justify-content-around">
-                <li><button type="button" class="btn btn-secondary mt-3 btn-lg">Ordinateur</button></li>
-                <li><button type="button" class="btn btn-secondary mt-3 btn-lg">Smartphone</button></li>
-                <li><button type="button" class="btn btn-secondary mt-3 btn-lg">PC Portable</button></li>
-                <li><button type="button" class="btn btn-secondary mt-3 btn-lg">Casque VR</button></li>
+                <li><button type="button" onclick="ordiTrue()" class="btn btn-secondary mt-3 btn-lg">Ordinateur</button></li>
+                <li><button type="button" onclick="mobTrue()" class="btn btn-secondary mt-3 btn-lg">Smartphone</button></li>
+                <li><button type="button" onclick="pcTrue()" class="btn btn-secondary mt-3 btn-lg">PC Portable</button></li>
+                <li><button type="button" onclick="vrTrue()" class="btn btn-secondary mt-3 btn-lg">Casque VR</button></li>
               </ul>
             </div>
           </nav>
         </header>
 
-        <main class="container">
+        <main id="contenu" class="container bg-faded">
+          <div class="temps">
+            <p id="horaire"></p>
+            <p id="tmpReste"></p>
+          </div>
           <section id="tableauProduit">
             <section class="table">
-            <?php
-            $img_adress=array[];
-            ?>
+              <?php
+              $connect = mysql_connect('localhost','root','root') or die ("erreur de connexion");
+              mysql_select_db('images',$connect) or die ("erreur de connexion base");
+              ?>
+              <?php
+              $image = array(img => img_adress);
+              ?>
             </section>
           </section>
 
@@ -49,7 +55,7 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
               <p>non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
-              <img src="img/mobile/samsung-gear-vr-350x237.jpg" alt="un jolie casque vr">
+              <img class="vr" src="img/mobile/samsung-gear-vr-350x237.jpg" alt="un jolie casque vr">
             </article>
             <article>
               <h3>machin truc</h3>
@@ -95,6 +101,7 @@
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
 
+
         <script>
           function confirmation(){
             confirm("êtez vous sûr de vouloir quitter?");
@@ -109,9 +116,68 @@
            var secondes = today.getSeconds();
            var heure = today.getHours();
            var jour = today.getDay();
+           var nbjour = today.getDate();
            var mois = today.getMonth();
            var année = today.getFullYear();
-           $('#horaire').append(heure + " h "+ minute + " min " + secondes +" sec "+ jour + " ème jour " + mois + " mois " + année + " année");
+           if(jour == 1){
+             jour = "lundi";
+           }
+           else if (jour == 2) {
+             jour = "mardi";
+           }
+           else if (jour == 3) {
+             jour = "mercredi";
+           }
+           else if (jour == 4) {
+             jour = "jeudi"
+           }
+           else if (jour == 5) {
+             jour = "vendredi";
+           }
+           else if (jour == 6) {
+             jour = "samedi";
+           }
+           else {
+             jour = "dimanche"
+           }
+
+           if(mois == 0){
+             mois ="janvier";
+           }
+           else if (mois ==1) {
+             mois = "fevrier"
+           }
+           else if (mois ==2) {
+             mois = "mars";
+           }
+           else if (mois ==3) {
+             mois = "avril";
+           }
+           else if (mois ==4) {
+             mois = "mai";
+           }
+           else if (mois ==5) {
+             mois = "juin";
+           }
+           else if (mois==6) {
+             mois = "juillet";
+           }
+           else if (mois==7) {
+             mois ="août";
+           }
+           else if (mois==8) {
+             mois=="septembre";
+           }
+           else if (mois==9) {
+             mois = "octobre";
+           }
+           else if (mois ==10) {
+             mois = "novembre";
+           }
+           else{
+             mois ="decembre";
+           }
+           $('#horaire').append(heure + " h "+ minute + " min " + secondes +" sec "+ jour + " " + nbjour + " " + mois + " année " + année);
 
          }
 
@@ -119,6 +185,7 @@
         </script>
 
         <script type="text/javascript">
+
         var duree = 0;
         function tempReste(){
             duree += 1;
@@ -129,7 +196,8 @@
         function interval(){
           setInterval(tempReste, 1000);
 
-        }
+        }*/
+
 
         </script>
 
@@ -138,9 +206,47 @@
           var mobile = false;
           var pcportable = false;
           var vr = false;
+
+          function ordiTrue(){
+            ordinateur = true;
+            mobile = false;
+            pcportable = false;
+            vr = false;
+            return ordinateur;
+          }
+          function mobTrue(){
+            ordinateur = false;
+            mobile = true;
+            pcportable = true;
+            vr = true;
+            return mobile;
+          }
+          function pcTrue(){
+            ordinateur = false;
+            mobile = false;
+            pcportable = true;
+            vr = false;
+            return pcportable;
+          }
+          function vrTrue(){
+            ordinateur = false;
+            mobile = false;
+            pcportable = false;
+            vr = true;
+            return vr;
+          }
           var tableau = [];
-          if(ordinateur = true){
-            $sql = SELECT img_adress FROM images where  img_type='ordinateur';
+          if(ordinateur == true){
+            $sql = SELECT img_adress FROM images where img_type='ordinateur';
+          }
+          if(mobile == true){
+            $sql = SELECT img_adress FROM images where img_type='mobile';
+          }
+          if(pcportable == true){
+            $sql = SELECT img_adress FROM images where img_type='pcportable';
+          }
+          if(vr == true){
+            $sql = SELECT img_adress FROM images where img_type='vr';
           }
         </script>
 
