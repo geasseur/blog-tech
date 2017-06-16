@@ -1,17 +1,32 @@
 /*header*/
 
+header{
+  background-color: rgba(134, 134, 134, 0.5);
+}
+
 header>img, header>h1{
   display: inline-block;
 }
+#barreNavigation>button{
+  bottom : 30px;
+}
 
 /*Main*/
+
+main,footer{
+  position: relative;
+  top: 150px;
+}
 
 #tableauProduit, #article, #article>article{
   border: 1px solid #000;
 }
 
+@media (min-width: 850px){
+}
 
-@media (min-width: 900px) {
+
+@media (min-width: 1000px) {
   #tableauProduit, #article{
     vertical-align: top;
     width: 45%;

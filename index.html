@@ -12,16 +12,18 @@
       <link rel="icon" type="image/png" href=".png" />
       <title>Blog de la tech tonique</title>
     </head>
-    <body>
-        <header class="bg-faded">
+    <body onload = "interval()" >
+        <header class="fixed-top">
           <img src="" alt="logo du blog">
           <h1>Blog de la tech tonique</h1>
+          <p id="horaire"></p>
+          <p id="tmpReste"></p>
           <nav class="navbar navbar-toggleable-md navbar-light" id="barreNavigation">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto d-flex justify-content-around align-items-center">
+              <ul class="col-12 navbar-nav mr-auto row d-flex flex-nowrap justify-content-around">
                 <li><button type="button" class="btn btn-secondary mt-3 btn-lg">Ordinateur</button></li>
                 <li><button type="button" class="btn btn-secondary mt-3 btn-lg">Smartphone</button></li>
                 <li><button type="button" class="btn btn-secondary mt-3 btn-lg">PC Portable</button></li>
@@ -34,7 +36,9 @@
         <main class="container">
           <section id="tableauProduit">
             <section class="table">
-
+            <?php
+            $img_adress=array[];
+            ?>
             </section>
           </section>
 
@@ -45,7 +49,7 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
               <p>non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
-              <img src="" alt="">
+              <img src="img/mobile/samsung-gear-vr-350x237.jpg" alt="un jolie casque vr">
             </article>
             <article>
               <h3>machin truc</h3>
@@ -76,15 +80,72 @@
           <p>23 rue de la boustifaille</p>
           <a href="#">Sur Mars</a>
 
+          <form class="" action="index.html" method="post">
+            <p>Abonnez vous</p>
+
+            <input type="text" name="" value="votre nom">
+            <input type="text" name="" value="votre mail">
+            <button type="submit" name="button" id="btnEnvois" onclick="confirmation()">envoyer</button>
+          </form>
+
         </footer>
 
-
-        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
         <script src="../js/jquery-3.2.1.js"></script>
         <script src="js/plugins.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
+
+        <script>
+          function confirmation(){
+            confirm("êtez vous sûr de vouloir quitter?");
+          }
+        </script>
+
+        <script  type="text/javascript">
+        function horloge(){
+
+           var today = new Date();
+           var minute = today.getMinutes();
+           var secondes = today.getSeconds();
+           var heure = today.getHours();
+           var jour = today.getDay();
+           var mois = today.getMonth();
+           var année = today.getFullYear();
+           $('#horaire').append(heure + " h "+ minute + " min " + secondes +" sec "+ jour + " ème jour " + mois + " mois " + année + " année");
+
+         }
+
+        horloge();
+        </script>
+
+        <script type="text/javascript">
+        var duree = 0;
+        function tempReste(){
+            duree += 1;
+            $('#tmpReste').append(duree + " ");
+          /*  document.#tmpReste.innerHTML = duree;*/
+        }
+
+        function interval(){
+          setInterval(tempReste, 1000);
+
+        }
+
+        </script>
+
+        <script type="text/javascript">
+          var ordinateur = false;
+          var mobile = false;
+          var pcportable = false;
+          var vr = false;
+          var tableau = [];
+          if(ordinateur = true){
+            $sql = SELECT img_adress FROM images where  img_type='ordinateur';
+          }
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
           <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
           <script>
