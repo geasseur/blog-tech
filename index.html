@@ -7,21 +7,20 @@
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="css/normalize.css">
       <link rel="stylesheet" href="css/main.css">
-      <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
       <link rel="icon" type="image/png" href=".png" />
       <title>Blog de la tech tonique</title>
     </head>
     <body onload = "interval()" id= "page" >
-        <header class="fixed-top">
-          <img src="img/mobile/logo.png" alt="logo du blog">
+        <header>
+          <img class="imgBlog" src="img/mobile/logo.png" alt="logo du blog">
           <h1>Blog de la tech tonique</h1>
           <nav class="navbar navbar-toggleable-md navbar-light" id="barreNavigation">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="col-12 navbar-nav mr-auto row d-flex flex-nowrap justify-content-around">
+            <div class="collapse navbar-collapse bg-warning" id="navbarSupportedContent">
+              <ul class="col-12 navbar-nav mr-auto mb-3 row d-flex flex-nowrap justify-content-around align-items-center">
                 <li><button type="button" onclick="ordiTrue()" class="btn btn-secondary mt-3 btn-lg">Ordinateur</button></li>
                 <li><button type="button" onclick="mobTrue()" class="btn btn-secondary mt-3 btn-lg">Smartphone</button></li>
                 <li><button type="button" onclick="pcTrue()" class="btn btn-secondary mt-3 btn-lg">PC Portable</button></li>
@@ -33,18 +32,108 @@
 
         <main id="contenu" class="container bg-faded">
           <div class="temps">
-            <p id="horaire"></p>
-            <p id="tmpReste"></p>
+            <p id="horaire">
+              <script  type="text/javascript">
+                function horloge(){
+
+               var today = new Date();
+               var minute = today.getMinutes();
+               var secondes = today.getSeconds();
+               var heure = today.getHours();
+               var jour = today.getDay();
+               var nbjour = today.getDate();
+               var mois = today.getMonth();
+               var année = today.getFullYear();
+               if(jour == 1){
+                 jour = "lundi";
+               }
+               else if (jour == 2) {
+                 jour = "mardi";
+               }
+               else if (jour == 3) {
+                 jour = "mercredi";
+               }
+               else if (jour == 4) {
+                 jour = "jeudi"
+               }
+               else if (jour == 5) {
+                 jour = "vendredi";
+               }
+               else if (jour == 6) {
+                 jour = "samedi";
+               }
+               else {
+                 jour = "dimanche"
+               }
+
+               if(mois == 0){
+                 mois ="janvier";
+               }
+               else if (mois ==1) {
+                 mois = "fevrier"
+               }
+               else if (mois ==2) {
+                 mois = "mars";
+               }
+               else if (mois ==3) {
+                 mois = "avril";
+               }
+               else if (mois ==4) {
+                 mois = "mai";
+               }
+               else if (mois ==5) {
+                 mois = "juin";
+               }
+               else if (mois==6) {
+                 mois = "juillet";
+               }
+               else if (mois==7) {
+                 mois ="août";
+               }
+               else if (mois==8) {
+                 mois=="septembre";
+               }
+               else if (mois==9) {
+                 mois = "octobre";
+               }
+               else if (mois ==10) {
+                 mois = "novembre";
+               }
+               else{
+                 mois ="decembre";
+               }
+               document.getElementById("horaire").innerHTML += (heure + " h "+ minute + " min " + secondes +" sec "+ jour + " " + nbjour + " " + mois + " année " + année);
+
+             }
+
+            horloge();
+            </script></p>
+
+            <p id="tmpReste"><script type="text/javascript">
+
+            var duree = 0;
+            function tempReste(){
+                parseInt(duree += 1);
+                document.getElementById("tmpReste").innerHTML += duree ;
+                setTimeout(function () {
+                  var delet = parseInt(duree);
+                  document.getElementById("tmpReste").innerHTML -= delet ;
+                }, 500);
+            }
+
+            setInterval(tempReste, 1000);
+        </script></p>
           </div>
+
           <section id="tableauProduit">
             <section class="table">
-              <?php
+            <!--  <?php
               $connect = mysql_connect('localhost','root','root') or die ("erreur de connexion");
               mysql_select_db('images',$connect) or die ("erreur de connexion base");
               ?>
               <?php
-              $image = array(img => img_adress);
-              ?>
+              $image = array[img => img_adress];
+              ?>-->
             </section>
           </section>
 
@@ -52,10 +141,25 @@
             <h2>Articles sur les dernières technologies</h2>
             <article>
               <h3>La vr d'oculus</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-              <p>non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
-              <img class="vr" src="img/mobile/samsung-gear-vr-350x237.jpg" alt="un jolie casque vr">
+              <article class="articleVR">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                <p>non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
+              </article>
+              <article class="imgVR">
+                <img class="vr" onmouseover="altImg(this)" onmouseout="nonAltImg(this)" src="img/mobile/samsung-gear-vr-350x237.jpg" alt="un jolie casque vr" width="200" height="200">
+                <p id="altimg">
+                  <script>
+                  function altImg() {
+                      document.getElementById("altimg").innerHTML += "un jolie casque vr" ;
+                  }
+
+                  function nonAltImg() {
+                        document.getElementById("altimg").innerHTML -= "" ;
+                  }
+                  </script>
+                </p>
+              </article>
             </article>
             <article>
               <h3>machin truc</h3>
@@ -81,12 +185,15 @@
           </section>
         </main>
 
-        <footer class="bg-faded">
-          <p>baptiste ventura</p>
-          <p>23 rue de la boustifaille</p>
-          <a href="#">Sur Mars</a>
+        <footer class="footerBlog">
+          <article class="">
+            <p>baptiste ventura</p>
+            <p>23 rue de la boustifaille</p>
+            <a href="#">Sur Mars</a>
+          </article>
 
-          <form class="" action="index.html" method="post">
+
+          <form class="formulaire" action="index.html" method="post">
             <p>Abonnez vous</p>
 
             <input type="text" name="" value="votre nom">
@@ -96,7 +203,6 @@
 
         </footer>
 
-        <script src="../js/jquery-3.2.1.js"></script>
         <script src="js/plugins.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
@@ -106,99 +212,6 @@
           function confirmation(){
             confirm("êtez vous sûr de vouloir quitter?");
           }
-        </script>
-
-        <script  type="text/javascript">
-        function horloge(){
-
-           var today = new Date();
-           var minute = today.getMinutes();
-           var secondes = today.getSeconds();
-           var heure = today.getHours();
-           var jour = today.getDay();
-           var nbjour = today.getDate();
-           var mois = today.getMonth();
-           var année = today.getFullYear();
-           if(jour == 1){
-             jour = "lundi";
-           }
-           else if (jour == 2) {
-             jour = "mardi";
-           }
-           else if (jour == 3) {
-             jour = "mercredi";
-           }
-           else if (jour == 4) {
-             jour = "jeudi"
-           }
-           else if (jour == 5) {
-             jour = "vendredi";
-           }
-           else if (jour == 6) {
-             jour = "samedi";
-           }
-           else {
-             jour = "dimanche"
-           }
-
-           if(mois == 0){
-             mois ="janvier";
-           }
-           else if (mois ==1) {
-             mois = "fevrier"
-           }
-           else if (mois ==2) {
-             mois = "mars";
-           }
-           else if (mois ==3) {
-             mois = "avril";
-           }
-           else if (mois ==4) {
-             mois = "mai";
-           }
-           else if (mois ==5) {
-             mois = "juin";
-           }
-           else if (mois==6) {
-             mois = "juillet";
-           }
-           else if (mois==7) {
-             mois ="août";
-           }
-           else if (mois==8) {
-             mois=="septembre";
-           }
-           else if (mois==9) {
-             mois = "octobre";
-           }
-           else if (mois ==10) {
-             mois = "novembre";
-           }
-           else{
-             mois ="decembre";
-           }
-           $('#horaire').append(heure + " h "+ minute + " min " + secondes +" sec "+ jour + " " + nbjour + " " + mois + " année " + année);
-
-         }
-
-        horloge();
-        </script>
-
-        <script type="text/javascript">
-
-        var duree = 0;
-        function tempReste(){
-            duree += 1;
-            $('#tmpReste').append(duree + " ");
-          /*  document.#tmpReste.innerHTML = duree;*/
-        }
-
-        function interval(){
-          setInterval(tempReste, 1000);
-
-        }*/
-
-
         </script>
 
         <script type="text/javascript">

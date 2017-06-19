@@ -1,21 +1,26 @@
+/*{
+  border: 1px solid #000 !important;
+}*/
+
 #page{
-  background-color: rgba(67, 149, 235, 0.5);
+  background-color: rgba(67, 149, 235, 0.3);
 }
 /*header*/
 
 header{
-  background-color: rgba(245, 105, 105, 0.5);
+  background-color: rgba(105, 245, 195, 0.3);
 }
 
 header>img, header>h1{
   display: inline-block;
+  margin-top: 10px;
 }
 header>h1{
-  width: 30%;
-  margin: auto;
+  width: 50%;
 }
-header>img{
+.imgBlog{
   width: 40%;
+  vertical-align: top;
 }
 #barreNavigation>button{
   bottom : 30px;
@@ -25,7 +30,6 @@ header>img{
 
 main,footer{
   position: relative !important;
-  top: 275px;
 }
 
 .temps{
@@ -33,22 +37,57 @@ main,footer{
  margin: auto;
 }
 
-#tableauProduit, #article, #article>article{
+#tableauProduit, #article{
   border: 1px solid #000;
 }
+
+/*FOOTER*/
+.footerBlog{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(https://img.memecdn.com/we-need-you-for-the-trool-army_o_1677733.jpg);
+  background-size: contain;
+  box-shadow:inset 0 0 0 100px rgba(245, 105, 105,0.5);
+
+}
+
+.footerBlog>article{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.footerBlog>article>a, .footerBlog>article>p{
+  vertical-align:middle;
+}
+
+.formulaire{
+  margin-top: 20px;
+}
+
 
 @media (min-width: 1000px) {
   #tableauProduit, #article{
     vertical-align: top;
-    width: 45%;
+    width: 49%;
     margin: auto;
     display: inline-block;
     border: 1px solid #000;
   }
-  header>img{
+  .imgBlog{
     width: 15%;
   }
-  main, footer{
-    top : 350px;
+  header>h1{
+    margin:5% 0 0 10%;
   }
+  .imgVR,.articleVR{
+    width: 45%;
+    margin-left: 2%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
 }
