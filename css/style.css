@@ -37,8 +37,37 @@ main,footer{
  margin: auto;
 }
 
+#tmpReste{
+  height: 30px;
+}
+
 #tableauProduit, #article{
-  border: 1px solid #000;
+
+}
+
+.table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+}
+
+.table th {
+    background-color: #007cd9;
+    color: #ffffff;
+}
+
+.table td>img{
+  width: 50%;
+  margin-left: 25%;
+}
+
+.table tr.alt td {
+    background-color: #e4e4eb;
+    color: #000000;
+}
+
+.clickable1, .clickable2, .clickable3, .clickable4 {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 /*FOOTER*/
@@ -75,7 +104,6 @@ main,footer{
     width: 49%;
     margin: auto;
     display: inline-block;
-    border: 1px solid #000;
   }
   .imgBlog{
     width: 15%;
@@ -89,5 +117,5 @@ main,footer{
     display: inline-block;
     vertical-align: top;
   }
-  
+
 }

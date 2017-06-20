@@ -8,10 +8,11 @@
       <link rel="stylesheet" href="css/normalize.css">
       <link rel="stylesheet" href="css/main.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+      <link rel="type text javascript" href="js/main.js">
       <link rel="icon" type="image/png" href=".png" />
       <title>Blog de la tech tonique</title>
     </head>
-    <body onload = "interval()" id= "page" >
+    <body id= "page">
         <header>
           <img class="imgBlog" src="img/mobile/logo.png" alt="logo du blog">
           <h1>Blog de la tech tonique</h1>
@@ -33,100 +34,139 @@
         <main id="contenu" class="container bg-faded">
           <div class="temps">
             <p id="horaire">
-              <script  type="text/javascript">
-                function horloge(){
+            </p>
 
-               var today = new Date();
-               var minute = today.getMinutes();
-               var secondes = today.getSeconds();
-               var heure = today.getHours();
-               var jour = today.getDay();
-               var nbjour = today.getDate();
-               var mois = today.getMonth();
-               var année = today.getFullYear();
-               if(jour == 1){
-                 jour = "lundi";
-               }
-               else if (jour == 2) {
-                 jour = "mardi";
-               }
-               else if (jour == 3) {
-                 jour = "mercredi";
-               }
-               else if (jour == 4) {
-                 jour = "jeudi"
-               }
-               else if (jour == 5) {
-                 jour = "vendredi";
-               }
-               else if (jour == 6) {
-                 jour = "samedi";
-               }
-               else {
-                 jour = "dimanche"
-               }
+            <p id="tmpReste">
 
-               if(mois == 0){
-                 mois ="janvier";
-               }
-               else if (mois ==1) {
-                 mois = "fevrier"
-               }
-               else if (mois ==2) {
-                 mois = "mars";
-               }
-               else if (mois ==3) {
-                 mois = "avril";
-               }
-               else if (mois ==4) {
-                 mois = "mai";
-               }
-               else if (mois ==5) {
-                 mois = "juin";
-               }
-               else if (mois==6) {
-                 mois = "juillet";
-               }
-               else if (mois==7) {
-                 mois ="août";
-               }
-               else if (mois==8) {
-                 mois=="septembre";
-               }
-               else if (mois==9) {
-                 mois = "octobre";
-               }
-               else if (mois ==10) {
-                 mois = "novembre";
-               }
-               else{
-                 mois ="decembre";
-               }
-               document.getElementById("horaire").innerHTML += (heure + " h "+ minute + " min " + secondes +" sec "+ jour + " " + nbjour + " " + mois + " année " + année);
-
-             }
-
-            horloge();
-            </script></p>
-
-            <p id="tmpReste"><script type="text/javascript">
-
-            var duree = 0;
-            function tempReste(){
-                parseInt(duree += 1);
-                document.getElementById("tmpReste").innerHTML += duree ;
-                setTimeout(function () {
-                  var delet = parseInt(duree);
-                  document.getElementById("tmpReste").innerHTML -= delet ;
-                }, 500);
-            }
-
-            setInterval(tempReste, 1000);
-        </script></p>
+            </p>
           </div>
 
           <section id="tableauProduit">
-            <section class="table">
+            <section>
+              <table class="table">
+                <tr>
+                    <th class="clickable1">Ordinateur</th>
+
+                </tr>
+
+                <tr id="toggle1">
+                    <td><img src="http://i2.cdscdn.com/pdt2/3/n/f/1/300x300/260a103nf/rw/hp-pc-de-bureau-260a103nf-4go-de-ram-windows.jpg" alt="tour hp"></td>
+
+                </tr>
+
+                <tr class="toggle">
+                    <td><img src="http://image.darty.com/informatique/bureau-bureau/bureau/asus_g11cd-k-fr107t_p1606134217128A_161304716.jpg" alt="tour asus"></td>
+                </tr>
+
+                <tr class="toggle">
+                    <td><img src="http://image.darty.com/darty?type=image&source=/market/2016/05/07/mkp_0Vfy3ClfR-1vVQ.jpeg&width=269&height=405" alt="tour z3"></td>
+                </tr>
+
+                <tr class="toggle">
+                    <td><img src="https://base2code.com/wp-content/uploads/2012/07/LD0000980487_2.jpg" alt="tour hunter"></td>
+                </tr>
+
+                <tr>
+                    <th class="clickable2">January 2014</th>
+                </tr>
+
+                <tr class="toggle2">
+                    <td>January 1, 2014</td>
+                </tr>
+
+                <tr class="toggle2">
+                    <td>January 4, 2014</td>
+                </tr>
+
+                <tr class="toggle2">
+                    <td>January 15, 2014</td>
+                </tr>
+
+                <tr class="toggle2">
+                    <td>January 29, 2014</td>
+                </tr>
+
+                <tr>
+                    <th class="clickable3">February 2014</th>
+                </tr>
+
+
+                <tr class="toggle3">
+                    <td>February 2, 2014</td>
+                </tr>
+
+                <tr class="toggle3">
+                    <td>February 9, 2014</td>
+                </tr>
+
+                <tr class="toggle3">
+                    <td>February 17, 2014</td>
+                </tr>
+
+                <tr class="toggle3">
+                    <td>February 26, 2014</td>
+                </tr>
+
+                <tr>
+                    <th class="clickable4">March 2014</th>
+                </tr>
+
+                <tr class="toggle4">
+                    <td>March 7, 2014</td>
+                </tr>
+
+                <tr class="toggle4">
+                    <td>March 16, 2014</td>
+                </tr>
+
+                <tr class="toggle4">
+                    <td>March 25, 2014</td>
+                </tr>
+
+                <tr class="toggle4">
+                    <td>March 28, 2014</td>
+                </tr>
+
+                <script>
+                // $(document).ready(function() {
+
+                     var invisible = document.getElementById("toggle1");
+                     function cache(invisible){
+                       invisible.style.display = "none";
+                     }
+                     cache(invisible);
+
+
+                    /* $('.clickable1').click(function() {
+                         $('.toggle').toggle();
+                     });
+
+
+
+
+                //     $('.clickable2').click(function() {
+                //         $('.toggle2').toggle();
+                //     });
+                //
+                //
+                //
+                //     $('.clickable3').click(function() {
+                //         $('.toggle3').toggle();
+                //     });
+                //
+                //
+                //
+                //     $('.clickable4').click(function() {
+                //         $('.toggle4').toggle();
+                //     });
+                // });*/
+
+
+                </script>
+
+
+
+            </table>
             <!--  <?php
               $connect = mysql_connect('localhost','root','root') or die ("erreur de connexion");
               mysql_select_db('images',$connect) or die ("erreur de connexion base");
@@ -150,14 +190,16 @@
                 <img class="vr" onmouseover="altImg(this)" onmouseout="nonAltImg(this)" src="img/mobile/samsung-gear-vr-350x237.jpg" alt="un jolie casque vr" width="200" height="200">
                 <p id="altimg">
                   <script>
-                  function altImg() {
-                      document.getElementById("altimg").innerHTML += "un jolie casque vr" ;
-                  }
+                    function altImg() {
 
-                  function nonAltImg() {
-                        document.getElementById("altimg").innerHTML -= "" ;
-                  }
+                        document.getElementById("altimg").innerHTML += this.alt ;
+                    }
+
+                    function nonAltImg() {
+                        document.getElementById("altimg").innerHTML = "" ;
+                    }
                   </script>
+
                 </p>
               </article>
             </article>
@@ -205,65 +247,106 @@
 
         <script src="js/plugins.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-        <script src="js/main.js"></script>
-
-
-        <script>
-          function confirmation(){
-            confirm("êtez vous sûr de vouloir quitter?");
-          }
-        </script>
-
+        <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript">
-          var ordinateur = false;
-          var mobile = false;
-          var pcportable = false;
-          var vr = false;
+        //script pour la confirmation d'envois
 
-          function ordiTrue(){
-            ordinateur = true;
-            mobile = false;
-            pcportable = false;
-            vr = false;
-            return ordinateur;
-          }
-          function mobTrue(){
-            ordinateur = false;
-            mobile = true;
-            pcportable = true;
-            vr = true;
-            return mobile;
-          }
-          function pcTrue(){
-            ordinateur = false;
-            mobile = false;
-            pcportable = true;
-            vr = false;
-            return pcportable;
-          }
-          function vrTrue(){
-            ordinateur = false;
-            mobile = false;
-            pcportable = false;
-            vr = true;
-            return vr;
-          }
-          var tableau = [];
-          if(ordinateur == true){
-            $sql = SELECT img_adress FROM images where img_type='ordinateur';
-          }
-          if(mobile == true){
-            $sql = SELECT img_adress FROM images where img_type='mobile';
-          }
-          if(pcportable == true){
-            $sql = SELECT img_adress FROM images where img_type='pcportable';
-          }
-          if(vr == true){
-            $sql = SELECT img_adress FROM images where img_type='vr';
-          }
+        function confirmation(){
+          confirm("êtez vous sûr de vouloir envoyer?");
+        }
+
+        // script pour le compteur
+        var duree = 0;
+        function tempReste(){
+            parseInt(duree += 1);
+            document.getElementById("tmpReste").innerHTML += (duree + " secondes") ;
+            setTimeout(function () {
+              var delet = parseInt(duree);
+              document.getElementById("tmpReste").innerHTML = " " ;
+            }, 600);
+        }
+
+        setInterval(tempReste, 1000);
+
+        //script pour l'heure.
+        function horloge(){
+
+        var today = new Date();
+        var minute = today.getMinutes();
+        var secondes = today.getSeconds();
+        var heure = today.getHours();
+        var jour = today.getDay();
+        var nbjour = today.getDate();
+        var mois = today.getMonth();
+        var année = today.getFullYear();
+        if(jour == 1){
+         jour = "lundi";
+        }
+        else if (jour == 2) {
+         jour = "mardi";
+        }
+        else if (jour == 3) {
+         jour = "mercredi";
+        }
+        else if (jour == 4) {
+         jour = "jeudi"
+        }
+        else if (jour == 5) {
+         jour = "vendredi";
+        }
+        else if (jour == 6) {
+         jour = "samedi";
+        }
+        else {
+         jour = "dimanche"
+        }
+
+        if(mois == 0){
+         mois ="janvier";
+        }
+        else if (mois ==1) {
+         mois = "fevrier"
+        }
+        else if (mois ==2) {
+         mois = "mars";
+        }
+        else if (mois ==3) {
+         mois = "avril";
+        }
+        else if (mois ==4) {
+         mois = "mai";
+        }
+        else if (mois ==5) {
+         mois = "juin";
+        }
+        else if (mois==6) {
+         mois = "juillet";
+        }
+        else if (mois==7) {
+         mois ="août";
+        }
+        else if (mois==8) {
+         mois=="septembre";
+        }
+        else if (mois==9) {
+         mois = "octobre";
+        }
+        else if (mois ==10) {
+         mois = "novembre";
+        }
+        else{
+         mois ="decembre";
+        }
+        document.getElementById("horaire").innerHTML += (heure + " h "+ minute + " min " + secondes +" sec "+ jour + " " + nbjour + " " + mois + " année " + année);
+
+        }
+
+        horloge();
+
         </script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
           <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
