@@ -13,7 +13,7 @@
     </head>
     <body id= "page">
         <header>
-          <img class="imgBlog" src="img/mobile/logo.png" alt="logo du blog">
+          <img class="logoBlog" src="img/mobile/logo.png" alt="logo du blog">
           <h1>Blog de la tech tonique</h1>
           <nav class="navbar navbar-toggleable-md navbar-light" id="barreNavigation">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -128,81 +128,8 @@
                     <td><img src="http://brain-images.cdn.dixons.com/0/1/10146810/u_10146810.jpg" alt="tablette asus"></td>
                 </tr>
 
-                <script type="text/javascript">
-                  var invisible = document.getElementsByClassName("toggle");
-                  var invisible2 = document.getElementsByClassName( "toggle2");
-                  var invisible3 = document.getElementsByClassName( "toggle3");
-                  var invisible4 = document.getElementsByClassName( "toggle4");
-                   console.log(invisible);
-
-
-                      function disparition(invisible,invisible2,invisible3,invisible4){
-                          for(i=0;i<4;i++){
-                            invisible[i].style.display = "none";
-                            console.log(invisible[i]);
-                          }
-                          for(i=0;i<4;i++){
-                            invisible2[i].style.display = "none";
-                            console.log(invisible2[i]);
-                          }
-                          for(i=0;i<4;i++){
-                            invisible3[i].style.display = "none";
-                            console.log(invisible3[i]);
-                          }
-                          for(i=0;i<4;i++){
-                            invisible4[i].style.display = "none";
-                            console.log(invisible4[i]);
-                        }
-                      }
-                      disparition(invisible,invisible2,invisible3,invisible4);
-
-                        function apparition(invisible){
-                          disparition(invisible,invisible2,invisible3,invisible4);
-                          for(i=0;i<4;i++){
-                            invisible[i].style.display = "flex";
-                            }
-
-                          }
-
-
-                        function apparition2(invisible2){
-                          disparition(invisible,invisible2,invisible3,invisible4);
-                          for(i=0;i<4;i++){
-                            invisible2[i].style.display = "block";
-                            }
-
-                          }
-
-                          function apparition3(invisible3){
-                            disparition(invisible,invisible2,invisible3,invisible4);
-                            for(i=0;i<4;i++){
-                              invisible3[i].style.display = "block";
-                              }
-
-                            }
-
-                            function apparition4(invisible4){
-                              disparition(invisible,invisible2,invisible3,invisible4);
-                              for(i=0;i<4;i++){
-                                invisible4[i].style.display = "block";
-                                }
-
-                              }
-
-                      </script>
-
-
-
-
 
             </table>
-            <!--  <?php
-              $connect = mysql_connect('localhost','root','root') or die ("erreur de connexion");
-              mysql_select_db('images',$connect) or die ("erreur de connexion base");
-              ?>
-              <?php
-              $image = array[img => img_adress];
-              ?>-->
             </section>
           </section>
 
@@ -210,51 +137,59 @@
             <h2>Articles sur les dernières technologies</h2>
             <article>
               <h3>La vr d'oculus</h3>
-              <article class="articleVR">
+              <article class="articleBlog">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
                 <p>non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
               </article>
-              <article class="imgVR">
+              <article class="imgBlog">
                 <img id="vr" class="vr" onmouseover="altImg(this)" onmouseout="nonAltImg(this)" src="img/mobile/samsung-gear-vr-350x237.jpg" alt="un jolie casque vr" width="200" height="200">
                 <p id="altimg">
-                  <script>
-
-                    var altIMG = document.getElementById("vr").alt;
-                    function altImg() {
-
-                        document.getElementById("altimg").innerHTML += altIMG ;
-                    }
-
-                    function nonAltImg() {
-                        document.getElementById("altimg").innerHTML = "" ;
-                    }
-                  </script>
-
 
                 </p>
               </article>
             </article>
+
+
             <article>
+            <article class="articleBlog">
               <h3>power glove</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
               <p>non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
+              </article>
+              <article class="imgBlog">
+
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/NES-Power-Glove.jpg/300px-NES-Power-Glove.jpg" alt="power glove">
-            </article>
+              </article>
+
+              </article>
+
+
+
             <article>
+              <article class="articleBlog">
               <h3>Roto VR</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
               <p>non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
+              </article>
+              <article class="imgBlog">
               <img src="http://www.ginjfo.com/wp-content/uploads/2016/05/Roto_VR.jpg" alt="siege réalité virtuelle">
             </article>
+            </article>
+
+
             <article>
+              <article class="articleBlog">
               <h3>Ordinateur quantique</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
               <p>non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               <p>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </p>
+              </article>
+              <article class="imgBlog">
               <img src="http://www.cnetfrance.fr/i/edit/2015/12/d_wave.jpg" alt="ordi quantique">
+            </article>
             </article>
           </section>
         </main>
@@ -279,6 +214,19 @@
 
         <script src="js/plugins.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+
+        <script>
+
+          var altIMG = document.getElementById("vr").alt;
+          function altImg() {
+
+              document.getElementById("altimg").innerHTML += altIMG ;
+          }
+
+          function nonAltImg() {
+              document.getElementById("altimg").innerHTML = "" ;
+          }
+        </script>
 
         <script type="text/javascript">
         //script pour la confirmation d'envois
@@ -376,6 +324,71 @@
         horloge();
 
         </script>
+
+
+        <script type="text/javascript">
+          var invisible = document.getElementsByClassName("toggle");
+          var invisible2 = document.getElementsByClassName( "toggle2");
+          var invisible3 = document.getElementsByClassName( "toggle3");
+          var invisible4 = document.getElementsByClassName( "toggle4");
+           console.log(invisible);
+
+
+              function disparition(invisible,invisible2,invisible3,invisible4){
+                  for(i=0;i<4;i++){
+                    invisible[i].style.display = "none";
+                    console.log(invisible[i]);
+                  }
+                  for(i=0;i<4;i++){
+                    invisible2[i].style.display = "none";
+                    console.log(invisible2[i]);
+                  }
+                  for(i=0;i<4;i++){
+                    invisible3[i].style.display = "none";
+                    console.log(invisible3[i]);
+                  }
+                  for(i=0;i<4;i++){
+                    invisible4[i].style.display = "none";
+                    console.log(invisible4[i]);
+                }
+              }
+              disparition(invisible,invisible2,invisible3,invisible4);
+
+                function apparition(invisible){
+                  disparition(invisible,invisible2,invisible3,invisible4);
+                  for(i=0;i<4;i++){
+                    invisible[i].style.display = "flex";
+                    }
+
+                  }
+
+
+                function apparition2(invisible2){
+                  disparition(invisible,invisible2,invisible3,invisible4);
+                  for(i=0;i<4;i++){
+                    invisible2[i].style.display = "block";
+                    }
+
+                  }
+
+                  function apparition3(invisible3){
+                    disparition(invisible,invisible2,invisible3,invisible4);
+                    for(i=0;i<4;i++){
+                      invisible3[i].style.display = "block";
+                      }
+
+                    }
+
+                    function apparition4(invisible4){
+                      disparition(invisible,invisible2,invisible3,invisible4);
+                      for(i=0;i<4;i++){
+                        invisible4[i].style.display = "block";
+                        }
+
+                      }
+
+              </script>
+
 
         <script
          src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>

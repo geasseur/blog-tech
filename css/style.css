@@ -18,7 +18,7 @@ header>img, header>h1{
 header>h1{
   width: 50%;
 }
-.imgBlog{
+.logoBlog{
   width: 40%;
   vertical-align: top;
 }
@@ -34,7 +34,8 @@ main,footer{
 
 .temps{
  width: 35%;
- margin: auto;
+ left: 65%;
+ position: relative;
 }
 
 #tmpReste{
@@ -103,17 +104,23 @@ main,footer{
     margin: auto;
     display: inline-block;
   }
-  .imgBlog{
-    width: 15%;
-  }
   header>h1{
     margin:5% 0 0 10%;
   }
-  .imgVR,.articleVR{
+  .logoBlog{
+    width: 15%;
+  }
+  .imgBlog,.articleBlog{
     width: 45%;
     margin-left: 2%;
     display: inline-block;
     vertical-align: top;
+  }
+  .imgBlog img{
+    width: 100%;
+  }
+  .temps{
+   left: 70%;
   }
 
 }
