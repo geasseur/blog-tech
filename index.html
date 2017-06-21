@@ -22,8 +22,8 @@
             </button>
             <div class="collapse navbar-collapse bg-warning" id="navbarSupportedContent">
               <ul class="col-12 navbar-nav mr-auto mb-3 row d-flex flex-nowrap justify-content-around align-items-center">
-                <li><button type="button" onclick="ordiTrue()" class="btn btn-secondary mt-3 btn-lg">Ordinateur</button></li>
-                <li><button type="button" onclick="mobTrue()" class="btn btn-secondary mt-3 btn-lg">Smartphone</button></li>
+                <li><button type="button" class="btn btn-secondary mt-3 btn-lg" onclick="apparition(invisible)">Ordinateur</button></li>
+                <li><button type="button" onclick="apparition2(invisible2)" class="btn btn-secondary mt-3 btn-lg">Smartphone</button></li>
                 <li><button type="button" onclick="pcTrue()" class="btn btn-secondary mt-3 btn-lg">PC Portable</button></li>
                 <li><button type="button" onclick="vrTrue()" class="btn btn-secondary mt-3 btn-lg">Casque VR</button></li>
               </ul>
@@ -45,11 +45,11 @@
             <section>
               <table class="table">
                 <tr>
-                    <th class="clickable1">Ordinateur</th>
+                    <th class="clickable1" on click="apparition(invisible)">Ordinateur</th>
 
                 </tr>
 
-                <tr id="toggle1">
+                <tr class="toggle">
                     <td><img src="http://i2.cdscdn.com/pdt2/3/n/f/1/300x300/260a103nf/rw/hp-pc-de-bureau-260a103nf-4go-de-ram-windows.jpg" alt="tour hp"></td>
 
                 </tr>
@@ -67,7 +67,7 @@
                 </tr>
 
                 <tr>
-                    <th class="clickable2">January 2014</th>
+                    <th class="clickable2">Mobile</th>
                 </tr>
 
                 <tr class="toggle2">
@@ -87,7 +87,7 @@
                 </tr>
 
                 <tr>
-                    <th class="clickable3">February 2014</th>
+                    <th class="clickable3">PC portable</th>
                 </tr>
 
 
@@ -108,7 +108,7 @@
                 </tr>
 
                 <tr>
-                    <th class="clickable4">March 2014</th>
+                    <th class="clickable4">Tablette</th>
                 </tr>
 
                 <tr class="toggle4">
@@ -127,42 +127,93 @@
                     <td>March 28, 2014</td>
                 </tr>
 
-                <script>
-                // $(document).ready(function() {
+                <script type="text/javascript">
+/*
+                $(document).ready(function(){
+                    $(".clickable1").click(function(){
+                        $("toggle").hide();
+                    });
+                    $(".clickable1").click(function(){
+                        $("toggle").show();
+                    });
+                });
+        /*
+                $(document).ready(function() {
 
-                     var invisible = document.getElementById("toggle1");
-                     function cache(invisible){
-                       invisible.style.display = "none";
+                    $(".toggle, .toggle2, .toggle3, .toggle4").hide();
+                });
+
+                $(document).ready(function(){
+                    $(".clickable1").click(function(){
+                        $("toggle").hide();
+                    });
+                    $(".clickable1").click(function(){
+                        $("toogle").show();
+                    });
+                });*/
+
+
+                  var invisible = document.getElementsByClassName("toggle");
+                   console.log(invisible);
+                   for (var i = 0; i < 4; i++) {
+
+
+                     invisible[i].style.display = 'none';
+
+                   }
+
+                   var invisible2 = document.getElementsByClassName( "toggle2");
+                    console.log(invisible2);
+                    for (var i = 0; i < 4; i++) {
+
+
+                      invisible2[i].style.display = 'none';
+                    }
+                    var invisible3 = document.getElementsByClassName( "toggle3");
+                     console.log(invisible3);
+                     for (var i = 0; i < 4; i++) {
+
+
+                       invisible3[i].style.display = 'none';
                      }
-                     cache(invisible);
+                     var invisible4 = document.getElementsByClassName( "toggle4");
+                      console.log(invisible4);
+                      for (var i = 0; i < 4; i++) {
 
 
-                    /* $('.clickable1').click(function() {
-                         $('.toggle').toggle();
-                     });
+                        invisible4[i].style.display = 'none';
+                      }
+
+                      function disparition(invisible,invisible2,invisible3,invisible4){
+                          for(i=0;i<4;i++){
+                            invisible[i].style.display = "none";
+                            invisible2[i].style.display = "none";
+                            invisible3[i].style.display = "none";
+                            invisibl4[i].style.display = "none";
+
+                        }
+                      }
+
+                        function apparition(invisible){
+                          disparition(invisible,invisible2,invisible3,invisible4);
+                          for(i=0;i<4;i++){
+                            invisible[i].style.display = "block";
+                            }
+
+                          }
 
 
+                        function apparition2(invisible2){
+                          disparition(invisible,invisible2,invisible3,invisible4);
+                          for(i=0;i<4;i++){
+                            invisible2[i].style.display = "block";
+                            }
+
+                          }
+
+                      </script>
 
 
-                //     $('.clickable2').click(function() {
-                //         $('.toggle2').toggle();
-                //     });
-                //
-                //
-                //
-                //     $('.clickable3').click(function() {
-                //         $('.toggle3').toggle();
-                //     });
-                //
-                //
-                //
-                //     $('.clickable4').click(function() {
-                //         $('.toggle4').toggle();
-                //     });
-                // });*/
-
-
-                </script>
 
 
 
@@ -192,13 +243,14 @@
                   <script>
                     function altImg() {
 
-                        document.getElementById("altimg").innerHTML += this.alt ;
+                        document.getElementById("altimg").innerHTML += "un jolie casque vr" ;
                     }
 
                     function nonAltImg() {
                         document.getElementById("altimg").innerHTML = "" ;
                     }
                   </script>
+
 
                 </p>
               </article>
@@ -247,7 +299,7 @@
 
         <script src="js/plugins.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+
         <script type="text/javascript">
         //script pour la confirmation d'envois
 
@@ -263,7 +315,7 @@
             setTimeout(function () {
               var delet = parseInt(duree);
               document.getElementById("tmpReste").innerHTML = " " ;
-            }, 600);
+            }, 990);
         }
 
         setInterval(tempReste, 1000);

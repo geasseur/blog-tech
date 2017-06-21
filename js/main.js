@@ -3,11 +3,7 @@
 
 // $(document).ready(function() {
 
-     var invisible = document.getElementsByClassName("toggle");
-     function cache(invisible){
-       invisible.style.display = "none";
-     }
-     cache(invisible);
+     
 
 
     /* $('.clickable1').click(function() {
