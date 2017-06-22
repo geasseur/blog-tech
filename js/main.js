@@ -1,46 +1,14 @@
 
-//Script pour le tableau interactif
-
-// $(document).ready(function() {
-
-     
-
-
-    /* $('.clickable1').click(function() {
-         $('.toggle').toggle();
-     });
-
-
-
-
-//     $('.clickable2').click(function() {
-//         $('.toggle2').toggle();
-//     });
-//
-//
-//
-//     $('.clickable3').click(function() {
-//         $('.toggle3').toggle();
-//     });
-//
-//
-//
-//     $('.clickable4').click(function() {
-//         $('.toggle4').toggle();
-//     });
-// });*/
-
-//script pour les hovers
-
+//affichage alt
+var altIMG = document.getElementById("vr").alt;
 function altImg() {
 
-    document.getElementById("altimg").innerHTML += this.alt ;
+    document.getElementById("altimg").innerHTML += altIMG ;
 }
 
 function nonAltImg() {
     document.getElementById("altimg").innerHTML = "" ;
 }
-
 
 //script pour la confirmation d'envois
 
@@ -56,7 +24,7 @@ function tempReste(){
     setTimeout(function () {
       var delet = parseInt(duree);
       document.getElementById("tmpReste").innerHTML = " " ;
-    }, 600);
+    }, 990);
 }
 
 setInterval(tempReste, 1000);
@@ -135,3 +103,66 @@ document.getElementById("horaire").innerHTML += (heure + " h "+ minute + " min "
 }
 
 horloge();
+
+
+var invisible = document.getElementsByClassName("toggle");
+var invisible2 = document.getElementsByClassName( "toggle2");
+var invisible3 = document.getElementsByClassName( "toggle3");
+var invisible4 = document.getElementsByClassName( "toggle4");
+ console.log(invisible);
+
+
+    function disparition(invisible,invisible2,invisible3,invisible4){
+        for(i=0;i<4;i++){
+          invisible[i].style.display = "none";
+          console.log(invisible[i]);
+        }
+        for(i=0;i<4;i++){
+          invisible2[i].style.display = "none";
+          console.log(invisible2[i]);
+        }
+        for(i=0;i<4;i++){
+          invisible3[i].style.display = "none";
+          console.log(invisible3[i]);
+        }
+        for(i=0;i<4;i++){
+          invisible4[i].style.display = "none";
+          console.log(invisible4[i]);
+      }
+    }
+
+
+
+      function apparition(invisible){
+        disparition(invisible,invisible2,invisible3,invisible4);
+        for(i=0;i<4;i++){
+          invisible[i].style.display = "flex";
+          }
+
+        }
+
+
+      function apparition2(invisible2){
+        disparition(invisible,invisible2,invisible3,invisible4);
+        for(i=0;i<4;i++){
+          invisible2[i].style.display = "block";
+          }
+
+        }
+
+        function apparition3(invisible3){
+          disparition(invisible,invisible2,invisible3,invisible4);
+          for(i=0;i<4;i++){
+            invisible3[i].style.display = "block";
+            }
+
+          }
+
+          function apparition4(invisible4){
+            disparition(invisible,invisible2,invisible3,invisible4);
+            for(i=0;i<4;i++){
+              invisible4[i].style.display = "block";
+              }
+
+            }
+          disparition(invisible,invisible2,invisible3,invisible4);

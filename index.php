@@ -12,10 +12,25 @@
       <title>Blog de la tech tonique</title>
     </head>
     <body id= "page">
-        <?php get_header(); ?>
+        <header>
+          <img class="logoBlog" src="img/mobile/logo.png" alt="logo du blog">
+          <h1>Blog de la tech tonique</h1>
+          <nav class="navbar navbar-toggleable-md navbar-light" id="barreNavigation">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="col-12 navbar-nav mr-auto mb-3 row d-flex flex-nowrap justify-content-around align-items-center">
+                <li><button type="button" class="btn btn-secondary mt-3 btn-lg" onclick="apparition(invisible)">Ordinateur</button></li>
+                <li><button type="button" onclick="apparition2(invisible2)" class="btn btn-secondary mt-3 btn-lg">Smartphone</button></li>
+                <li><button type="button" onclick="apparition3(invisible3)" class="btn btn-secondary mt-3 btn-lg">PC Portable</button></li>
+                <li><button type="button" onclick="apparition4(invisible4)" class="btn btn-secondary mt-3 btn-lg">Casque VR</button></li>
+              </ul>
+            </div>
+          </nav>
+        </header>
 
         <main id="contenu" class="container bg-faded">
-
           <div class="temps">
             <p id="horaire">
             </p>
@@ -118,11 +133,9 @@
             </section>
           </section>
 
-          <?php if (have_posts()) : ?>
-          <?php while (have_posts()) : the_post(); ?>
           <section id="article">
             <h2>Articles sur les dernières technologies</h2>
-            <article <?php post_class() ?> id="post-<?php the_ID(); ?>>
+            <article>
               <h3>La vr d'oculus</h3>
               <article class="articleBlog">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
@@ -181,11 +194,27 @@
           </section>
         </main>
 
-        <?php get_footer(); ?>
+        <footer class="footerBlog">
+          <article>
+            <p>baptiste ventura</p>
+            <p>23 rue de la boustifaille</p>
+            <a href="#">Sur Mars</a>
+          </article>
+
+
+          <form class="formulaire" action="index.html" method="post">
+            <p>Abonnez vous</p>
+
+            <input type="text" name="name" value="votre nom">
+            <input type="text" name="mail" value="votre mail">
+            <button type="submit" name="button" id="btnEnvois" onclick="confirmation()">envoyer</button>
+          </form>
+
+        </footer>
 
         <script src="js/main.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="<?php bloginfo('js/main.js'); ?>/javascript.js" ></script>
+
         <script>
 
           var altIMG = document.getElementById("vr").alt;
